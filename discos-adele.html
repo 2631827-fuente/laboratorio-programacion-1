@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explora la discografía interactiva de Adele. Descubre detalles de sus álbumes 19, 21, 25 y 30 con transiciones en 3D y diseño inmersivo.">
+  <title>Discos de Adele</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./estilos/discos-style.css">
+</head>
+<body>
+  <nav class="navegacion">
+    <a href="./index.html" class="enlace-nav">Inicio</a>
+    <a href="#" class="enlace-nav activo">Discos</a>
+    <a href="./cuestionario.html" class="enlace-nav">Quiz</a>
+  </nav>
+
+  <div class="contenedor-discos"></div>
+  <div class="contenedor-discos2">
+    <h3>Discos de Adele</h3>
+    <div class="grid-album">
+      <div class="tarjeta">
+        <div class="tarjeta-interna">
+          <div class="tarjeta-frente">
+            <img src="./imagenes-album/19.webp" alt="Adele 19">
+          </div>
+          <div class="tarjeta-atras">
+            <h3 class="titulo-album">Adele 19</h3>
+            <div class="divisor"></div>
+            <div class="grupo-info">
+              <span class="etiqueta-info">Mood</span>
+              <span class="valor-info">Melancólico y Nostálgico</span>
+            </div>
+            <div class="grupo-info">
+              <span class="etiqueta-info">Canción Famosa</span>
+              <span class="valor-info">Chasing Pavements</span>
+            </div>
+            <div class="grupo-info">
+              <span class="etiqueta-info">Año de Lanzamiento</span>
+              <span class="valor-info">2008</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tarjeta">
+        <div class="tarjeta-interna">
+          <div class="tarjeta-frente">
+            <img src="./imagenes-album/21.webp" alt="Adele 21">
+          </div>
+          <div class="tarjeta-atras">
+            <h3 class="titulo-album">Adele 21</h3>
+            <div class="divisor"></div>
+            <div class="grupo-info">
+              <span class="etiqueta-info">Mood</span>
+              <span class="valor-info">Desamor y Despecho</span>
+            </div>
+            <div class="grupo-info">
+              <span class="etiqueta-info">Canción Famosa</span>
+              <span class="valor-info">Rolling in the Deep</span>
+            </div>
+            <div class="grupo-info">
+              <span class="etiqueta-info">Año de Lanzamiento</span>
+              <span class="valor-info">2011</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tarjeta">
+        <div class="tarjeta-interna">
+          <div class="tarjeta-frente">
+            <img src="./imagenes-album/25.webp" alt="Adele 25">
+          </div>
+          <div class="tarjeta-atras">
+            <h3 class="titulo-album">Adele 25</h3>
+            <div class="divisor"></div>
+            <div class="grupo-info">
+              <span class="etiqueta-info">Mood</span>
+              <span class="valor-info">Añoranza y Reflexión</span>
+            </div>
+            <div class="grupo-info">
+              <span class="etiqueta-info">Canción Famosa</span>
+              <span class="valor-info">Hello</span>
+            </div>
+            <div class="grupo-info">
+              <span class="etiqueta-info">Año de Lanzamiento</span>
+              <span class="valor-info">2015</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tarjeta">
+        <div class="tarjeta-interna">
+          <div class="tarjeta-frente">
+            <img src="./imagenes-album/30.webp" alt="Adele 30">
+          </div>
+          <div class="tarjeta-atras">
+            <h3 class="titulo-album">Adele 30</h3>
+            <div class="divisor"></div>
+            <div class="grupo-info">
+              <span class="etiqueta-info">Mood</span>
+              <span class="valor-info">Vulnerabilidad y Sanación</span>
+            </div>
+            <div class="grupo-info">
+              <span class="etiqueta-info">Canción Famosa</span>
+              <span class="valor-info">Easy on Me</span>
+            </div>
+            <div class="grupo-info">
+              <span class="etiqueta-info">Año de Lanzamiento</span>
+              <span class="valor-info">2021</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const contenedor = document.querySelector('.contenedor-discos');
+    for (let i = 0; i < 120; i++) {
+      const gota = document.createElement('div');
+      gota.className = 'gota';
+      const dur = Math.random() * 0.6 + 3.6;
+      const height = Math.random() * 15 + 20;
+      gota.style.left = `${Math.random() * 100}%`;
+      gota.style.width = `${Math.random() * 1 + 1}px`;
+      gota.style.height = `${height}px`;
+      gota.style.opacity = Math.random() * 0.5 + 0.3;
+      gota.style.animationDuration = `${dur}s`;
+      gota.style.animationDelay = `-${Math.random() * dur}s`;
+      contenedor.appendChild(gota);
+    }
+  </script>
+</body>
+</html>

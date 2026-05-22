@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina de Adele</title>
+    <link rel="stylesheet" href="./estilos/index-style.css">
+</head>
+<body>
+    <div id="contenedor-principal">
+        <h1>Adele</h1>
+        <div id="contenedor-2">
+            <h2>The Heart Behind the Voice</h2>
+            <button><a href="./discos-adele.html">Enter the World</a></button>
+        </div>
+    </div>
+
+<script>
+  const imagenes = [
+    './imagenes-lluvia/1.jpeg',
+    './imagenes-lluvia/2.jpeg',
+    './imagenes-lluvia/3.jpeg',
+    './imagenes-lluvia/4.jpeg',
+    './imagenes-lluvia/5.jpeg',
+  ];
+
+  for (let i = 0; i < 20; i++) {
+    const img = document.createElement('img');
+    img.src = imagenes[Math.floor(Math.random() * imagenes.length)];
+    img.className = 'polaroid';
+    img.style.left   = `${Math.random() * 105 - 5}vw`;
+    img.style.width  = `${Math.random() * 60 + 70}px`;
+    const dur = Math.random() * 5 + 12;
+    img.style.animationDuration = `${dur}s`;
+    img.style.animationDelay   = `-${Math.random() * dur}s`;
+    img.style.setProperty('--rot-start', `${Math.random() * 40 - 20}deg`);
+    img.style.setProperty('--rot-end',   `${Math.random() * 60 - 30}deg`);
+    document.body.appendChild(img);
+  }
+</script>
+</body>
+</html>

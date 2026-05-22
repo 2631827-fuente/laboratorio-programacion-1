@@ -1,0 +1,204 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', 'Arial', sans-serif;
+    background-color: #0b0b0f;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+@keyframes gota {
+    0% { top: -50px; opacity: 0; }
+    5% { opacity: 1; }
+    95% { opacity: 0.6; }
+    100% { top: 105%; opacity: 0; }
+}
+
+.gota {
+    position: absolute;
+    top: -50px;
+    width: 1.5px;
+    height: 20px;
+    background: linear-gradient(transparent, rgba(128, 131, 133, 0.6));
+    pointer-events: none;
+    z-index: 10;
+    animation: gota linear infinite;
+}
+
+.contenedor-discos {
+    background-image: url('../background.jpg');
+    height: 95vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0;
+    box-sizing: border-box;
+    border-bottom: 8px solid #c5a880;
+}
+
+.contenedor-discos2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh;
+    align-items: center;
+}
+
+.contenedor-discos2 h3 {
+    font-family: 'Poppins', serif;
+    font-size: 2.5rem;
+    color: #c5a880;
+    margin-bottom: 20px;
+    z-index: 15;
+}
+
+.grid-album {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    width: 90%;
+    padding: 20px;
+    z-index: 15;
+}
+
+.tarjeta {
+    background-color: transparent;
+    width: 250px;
+    height: 350px;
+    perspective: 1000px;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.tarjeta-interna {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.tarjeta:hover .tarjeta-interna {
+    transform: rotateY(180deg);
+}
+
+.tarjeta-frente, .tarjeta-atras {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.tarjeta-frente {
+    background-color: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+.tarjeta-frente img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.tarjeta:hover .tarjeta-frente img {
+    transform: scale(1.05);
+}
+
+.tarjeta-atras {
+    background: #141211;
+    border: 1px solid #c5a880;
+    color: #ffffff;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.titulo-album {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.divisor {
+    width: 60px;
+    height: 2px;
+    background: #c5a880;
+    margin-bottom: 25px;
+}
+
+.grupo-info {
+    width: 100%;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.etiqueta-info {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #c5a880;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.valor-info {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    color: #e2e8f0;
+    font-weight: 400;
+    text-align: center;
+}
+
+.navegacion {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 25px 0;
+    z-index: 100;
+}
+
+.enlace-nav {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s ease, border-color 0.3s ease;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 4px;
+}
+
+.enlace-nav:hover,
+.enlace-nav.activo {
+    color: #c5a880;
+    border-bottom: 2px solid #c5a880;
+}

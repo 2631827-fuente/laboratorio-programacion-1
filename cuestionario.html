@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">    
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuestionario de Adele</title>
+  <link rel="stylesheet" href="./estilos/quiz-style.css">
+</head>
+<body>
+  <nav class="navegacion">
+    <a href="./index.html" class="enlace-nav">Inicio</a>
+    <a href="./discos-adele.html" class="enlace-nav">Discos</a>
+    <a href="#" class="enlace-nav activo">Quiz</a>
+  </nav>
+
+  <div id="contenedor-quiz">
+    <div class="tarjeta-quiz">
+      <span class="tag-quiz">Adele</span>
+      <h1 class="titulo-quiz">¿Qué canción de Adele te representa hoy?</h1>
+      <p class="subtitulo-quiz">Elige el estado de ánimo que más resuene contigo en este momento y descubre la melodía perfecta para tu alma.</p>
+      
+      <div class="opciones-grid">
+        <div class="opcion-mood" data-mood="tristeza">
+          <div class="mood-nombre">
+            <span class="mood-indicador"></span>
+            Tristeza
+          </div>
+          <div class="mood-detalle">
+            Cuando necesitas dejar ir, abrazar la melancolía y sentir la lluvia.
+          </div>
+        </div>
+
+        <div class="opcion-mood" data-mood="amor">
+          <div class="mood-nombre">
+            <span class="mood-indicador"></span>
+            Amor
+          </div>
+          <div class="mood-detalle">
+            Latidos apasionados, devoción incondicional y ternura pura.
+          </div>
+        </div>
+
+        <div class="opcion-mood" data-mood="nostalgia">
+          <div class="mood-nombre">
+            <span class="mood-indicador"></span>
+            Nostalgia
+          </div>
+          <div class="mood-detalle">
+            Recuerdos dorados de lo que fue y suspiros por el tiempo pasado.
+          </div>
+        </div>
+
+        <div class="opcion-mood" data-mood="superacion">
+          <div class="mood-nombre">
+            <span class="mood-indicador"></span>
+            Superación
+          </div>
+          <div class="mood-detalle">
+            Resurgir con fuerza de las cenizas y prenderle fuego a la lluvia.
+          </div>
+        </div>
+      </div>
+
+      <div id="resultado-quiz">
+        <div class="resultado-header">
+          <span class="resultado-subtitulo">Tu Canción Recomendada</span>
+          <h2 id="resultado-titulo"></h2>
+          <p id="resultado-album"></p>
+        </div>
+        <p id="resultado-descripcion"></p>
+        <div class="video-container" id="video-container"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./javascript/cuestionario.js"></script>
+</body>
+</html>
